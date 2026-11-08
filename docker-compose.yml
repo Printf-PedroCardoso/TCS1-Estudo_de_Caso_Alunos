@@ -1,0 +1,12 @@
+services:
+  devtech-academy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: devtech_academy_app
+    ports:
+      - "8080:80"
+    volumes:
+      # Montagem de volume para desenvolvimento em tempo real (live reload/updates)
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped

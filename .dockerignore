@@ -1,0 +1,7 @@
+.git
+.gitignore
+.dockerignore
+.ai-jail
+tests/
+*.pdf
+README.md
