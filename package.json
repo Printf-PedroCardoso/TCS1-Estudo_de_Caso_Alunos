@@ -1,0 +1,11 @@
+{
+  "name": "devtech-academy-alunos",
+  "version": "1.0.0",
+  "description": "Estudo de Caso 01 - Gerenciamento de Alunos na DevTech Academy",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "node --test tests/aluno.test.js"
+  },
+  "author": "Pedro Cardoso da Mata",
+  "license": "MIT"
+}
