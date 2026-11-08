@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTech Academy - Gerenciamento de Alunos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="cabecalho">
+      <h1>DevTech Academy</h1>
+      <p class="subtitulo">Sistema Integrado de Gerenciamento de Alunos &bull; Estudo de Caso 01</p>
+    </header>
+
+    <main>
+      <!-- ===================================================================
+           Exercício 1: Cadastro de Alunos com Formulário e Tabela (CRUD)
+           =================================================================== -->
+      <section class="card secao-formulario">
+        <h2>Cadastro de Alunos</h2>
+        <p class="descricao-secao">Preencha os campos abaixo para adicionar ou editar um registro de aluno.</p>
+        
+        <form id="form-aluno">
+          <div class="form-grid">
+            <div class="form-grupo">
+              <label for="nome">Nome:</label>
+              <input 
+                type="text" 
+                id="nome" 
+                name="nome" 
+                placeholder="Ex: Carlos Silva" 
+                required 
+              />
+            </div>
+
+            <div class="form-grupo">
+              <label for="idade">Idade:</label>
+              <input 
+                type="number" 
+                id="idade" 
+                name="idade" 
+                placeholder="Ex: 22" 
+                min="1" 
+                max="120" 
+                required 
+              />
+            </div>
+
+            <div class="form-grupo">
+              <label for="curso">Curso:</label>
+              <select id="curso" name="curso" required>
+                <option value="" disabled selected>Selecione um curso...</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+              </select>
+            </div>
+
+            <div class="form-grupo">
+              <label for="notaFinal">Nota Final:</label>
+              <input 
+                type="number" 
+                id="notaFinal" 
+                name="notaFinal" 
+                placeholder="Ex: 8.5" 
+                step="0.1" 
+                min="0" 
+                max="10" 
+                required 
+              />
+            </div>
+          </div>
+
+          <div class="form-acoes">
+            <button type="submit" id="btn-cadastrar" class="btn btn-primary">Cadastrar</button>
+            <button type="button" id="btn-cancelar-edicao" class="btn btn-secondary" style="display: none;">Cancelar Edição</button>
+            <button type="button" id="btn-carga-exemplo" class="btn btn-info">Carregar Dados de Exemplo</button>
+            <button type="button" id="btn-limpar-todos" class="btn btn-danger">Limpar Lista</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ===================================================================
+           Exercício 1: Exibição dos Registros em Tabela com Editar e Excluir
+           =================================================================== -->
+      <section class="card secao-tabela">
+        <h2>Alunos Cadastrados</h2>
+        <p class="descricao-secao">Listagem dinâmica dos alunos armazenados em memória (array de objetos Aluno).</p>
+
+        <div class="tabela-container">
+          <table id="tabela-alunos" class="tabela-custom">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th>Nome</th>
+                <th style="width: 80px;">Idade</th>
+                <th>Curso</th>
+                <th style="width: 100px;">Nota Final</th>
+                <th style="width: 120px;">Situação</th>
+                <th style="width: 160px;">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-corpo">
+              <!-- Linhas geradas dinamicamente via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           Exercício 4: Relatórios com filter, map, reduce, sort
+           =================================================================== -->
+      <section class="card secao-relatorios">
+        <h2>Relatórios Estatísticos</h2>
+        <p class="descricao-secao">Processamento funcional de dados usando métodos de array do JavaScript.</p>
+
+        <div class="botoes-relatorio">
+          <button type="button" id="btn-relatorio-aprovados" class="btn btn-outline">
+            1. Alunos Aprovados (<code>filter</code>)
+          </button>
+          <button type="button" id="btn-relatorio-media-notas" class="btn btn-outline">
+            2. Média das Notas (<code>reduce</code>)
+          </button>
+          <button type="button" id="btn-relatorio-media-idades" class="btn btn-outline">
+            3. Média das Idades (<code>reduce</code>)
+          </button>
+          <button type="button" id="btn-relatorio-nomes-ordem" class="btn btn-outline">
+            4. Nomes em Ordem Alfabética (<code>sort</code> &amp; <code>map</code>)
+          </button>
+          <button type="button" id="btn-relatorio-qtd-curso" class="btn btn-outline">
+            5. Alunos por Curso (<code>reduce</code>)
+          </button>
+          <button type="button" id="btn-relatorio-todos" class="btn btn-accent">
+            &star; Visão Completa de Todos os Relatórios
+          </button>
+        </div>
+
+        <div id="painel-relatorio" class="painel-resultado">
+          <p class="texto-aviso">Nenhum relatório selecionado no momento. Clique em um dos botões acima para gerar.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rodape">
+      <p>DevTech Academy &copy; Sistema desenvolvido para a disciplina de Tecnologia de Construção de Software I.</p>
+      <p><small>Exercícios 1, 2, 3 e 4 concluídos com sucesso &bull; Arquitetura orientada a objetos e programação funcional.</small></p>
+    </footer>
+  </div>
+
+  <!-- Inclusão dos scripts JavaScript -->
+  <!-- Exercício 2: Definição da Classe Aluno -->
+  <script src="js/Aluno.js"></script>
+  <!-- Exercícios 1, 3 e 4: Lógica do CRUD, manipuladores de eventos e relatórios -->
+  <script src="js/app.js"></script>
+</body>
+</html>
